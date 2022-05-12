@@ -3,11 +3,11 @@ import * as THREE from "./js/three.module.js";
 
 const canvas = document.querySelector(".webgl");
 const scene = new THREE.Scene();
-//scene.background = new THREE.Color(0xffe8dc);
+scene.background = new THREE.Color(0xffe8dc);
 const railwayPicture = new THREE.TextureLoader().load(
   "/dist/public/background.jpg"
 );
-scene.background = railwayPicture;
+//scene.background = railwayPicture;
 
 const sizes = {
   width: window.innerWidth,
@@ -38,7 +38,7 @@ pointLight2.position.set(5, 5, 5);
 
 scene.add(pointLight, pointLight2);
 
-const andrewTexture = new THREE.TextureLoader().load("/dist/public/andrew.jpg");
+const andrewTexture = new THREE.TextureLoader().load("./dist/public/andrew.jpg");
 
 const andrew = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
