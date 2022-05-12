@@ -4,7 +4,9 @@ import * as THREE from "./js/three.module.js";
 const canvas = document.querySelector(".webgl");
 const scene = new THREE.Scene();
 //scene.background = new THREE.Color(0xffe8dc);
-const railwayPicture = new THREE.TextureLoader().load("/dist/background.jpg");
+const railwayPicture = new THREE.TextureLoader().load(
+  "/dist/public/background.jpg"
+);
 scene.background = railwayPicture;
 
 const sizes = {
@@ -36,9 +38,12 @@ pointLight2.position.set(5, 5, 5);
 
 scene.add(pointLight, pointLight2);
 
-const andrewTexture = new THREE.TextureLoader().load('/dist/andrew.jpg');
+const andrewTexture = new THREE.TextureLoader().load("/dist/public/andrew.jpg");
 
-const andrew = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: andrewTexture }));
+const andrew = new THREE.Mesh(
+  new THREE.BoxGeometry(3, 3, 3),
+  new THREE.MeshBasicMaterial({ map: andrewTexture })
+);
 
 scene.add(andrew);
 
@@ -49,7 +54,7 @@ const shapeMesh = new THREE.Mesh(shapeGeo, shapeMat);
 //scene.add(shapeMesh);
 
 const textureLoader = new THREE.TextureLoader();
-const normalTexture = textureLoader.load("/dist/normal-map.jpeg");
+const normalTexture = textureLoader.load("/dist/public/normal-map.jpeg");
 const textureMaterial = new THREE.MeshStandardMaterial({
   color: 0xffffff,
   metalness: 0.7,
@@ -77,7 +82,6 @@ function moveCamera() {
   andrew.rotation.y += 0.01;
   andrew.rotation.z += 0.01;
 
-
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
   camera.position.y = t * -0.0002;
@@ -93,4 +97,3 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
-
