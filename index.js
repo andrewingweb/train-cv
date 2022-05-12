@@ -1,7 +1,7 @@
 import * as THREE from "./js/three.module.js";
 //import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-const canvas = document.querySelector(".webgl");
+const canvas = document.querySelector("#bg");
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffe8dc);
 const railwayPicture = new THREE.TextureLoader().load(
