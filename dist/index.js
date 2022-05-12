@@ -54,7 +54,7 @@ const shapeMesh = new THREE.Mesh(shapeGeo, shapeMat);
 //scene.add(shapeMesh);
 
 const textureLoader = new THREE.TextureLoader();
-const normalTexture = textureLoader.load("/dist/public/normal-map.jpeg");
+const normalTexture = textureLoader.load("../dist/public/normal-map.jpeg");
 const textureMaterial = new THREE.MeshStandardMaterial({
   color: 0xffffff,
   metalness: 0.7,
