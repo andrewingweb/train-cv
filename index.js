@@ -38,7 +38,7 @@ pointLight2.position.set(5, 5, 5);
 
 scene.add(pointLight, pointLight2);
 
-const andrewTexture = new THREE.TextureLoader().load("./dist/public/andrew.jpg");
+const andrewTexture = new THREE.TextureLoader().load("../dist/public/andrew.jpg");
 
 const andrew = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
@@ -54,7 +54,7 @@ const shapeMesh = new THREE.Mesh(shapeGeo, shapeMat);
 //scene.add(shapeMesh);
 
 const textureLoader = new THREE.TextureLoader();
-const normalTexture = textureLoader.load("../dist/public/normal-map.jpeg");
+const normalTexture = textureLoader.load("/dist/public/normal-map.jpeg");
 const textureMaterial = new THREE.MeshStandardMaterial({
   color: 0xffffff,
   metalness: 0.7,
@@ -92,6 +92,7 @@ document.body.onscroll = moveCamera;
 function animate() {
   requestAnimationFrame(animate);
   ball.rotateY(0.004);
+  andrew.rotateY(0.004);
 
   //controls.update();
   renderer.render(scene, camera);
