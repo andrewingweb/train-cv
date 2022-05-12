@@ -45,13 +45,13 @@ const andrewTexture = new THREE.TextureLoader().load("../dist/public/andrew.jpg"
 
 const andrew = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
-  new THREE.MeshBasicMaterial({ map: andrewTexture })
+  new THREE.MeshNormalMaterial({ map: andrewTexture })
 );
 
 scene.add(andrew);
 
 //add object or shape
-const shapeGeo = new THREE.OctahedronBufferGeometry(1, 0);
+const shapeGeo = new THREE.OctahedronGeometry(1, 0);
 const shapeMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
 const shapeMesh = new THREE.Mesh(shapeGeo, shapeMat);
 scene.add(shapeMesh);
@@ -66,7 +66,7 @@ const textureMaterial = new THREE.MeshStandardMaterial({
   emissive: 0x9152cc,
 });
 
-const ballGeo = new THREE.SphereBufferGeometry(4, 64, 64);
+const ballGeo = new THREE.SphereGeometry(4, 64, 64);
 const ball = new THREE.Mesh(ballGeo, textureMaterial);
 scene.add(ball);
 ball.position.z = 0;
