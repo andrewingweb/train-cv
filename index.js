@@ -36,6 +36,9 @@ pointLight.position.set(5, -28.5, 5);
 const pointLight2 = new THREE.PointLight(0x00ffff);
 pointLight2.position.set(5, 5, 5);
 
+const ambient = new THREE.AmbientLight(0xff0000, 1);
+scene.add(ambient);
+
 scene.add(pointLight, pointLight2);
 
 const andrewTexture = new THREE.TextureLoader().load("../dist/public/andrew.jpg");
@@ -51,7 +54,7 @@ scene.add(andrew);
 const shapeGeo = new THREE.OctahedronBufferGeometry(1, 0);
 const shapeMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
 const shapeMesh = new THREE.Mesh(shapeGeo, shapeMat);
-//scene.add(shapeMesh);
+scene.add(shapeMesh);
 
 const textureLoader = new THREE.TextureLoader();
 const normalTexture = textureLoader.load("../dist/public/normal-map.jpeg");
