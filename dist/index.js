@@ -3,11 +3,11 @@ import * as THREE from "./js/three.module.js";
 
 const canvas = document.querySelector("#bg");
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xffe8dc);
+//scene.background = new THREE.Color(0xffe8dc);
 const railwayPicture = new THREE.TextureLoader().load(
-  "/dist/public/background.jpg"
+  "../dist/public/background.jpg"
 );
-//scene.background = railwayPicture;
+scene.background = railwayPicture;
 
 const sizes = {
   width: window.innerWidth,
@@ -54,7 +54,7 @@ const shapeMesh = new THREE.Mesh(shapeGeo, shapeMat);
 //scene.add(shapeMesh);
 
 const textureLoader = new THREE.TextureLoader();
-const normalTexture = textureLoader.load("/dist/public/normal-map.jpeg");
+const normalTexture = textureLoader.load("../dist/public/normal-map.jpeg");
 const textureMaterial = new THREE.MeshStandardMaterial({
   color: 0xffffff,
   metalness: 0.7,
