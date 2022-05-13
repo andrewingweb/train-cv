@@ -1,4 +1,5 @@
 import * as THREE from "./js/three.module.js";
+
 //import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const canvas = document.querySelector("#bg");
@@ -41,7 +42,9 @@ scene.add(ambient);
 
 scene.add(pointLight, pointLight2);
 
-const andrewTexture = new THREE.TextureLoader().load("../dist/public/andrew.jpg");
+const andrewTexture = new THREE.TextureLoader().load(
+  "../dist/public/andrew.jpg"
+);
 
 const andrew = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
